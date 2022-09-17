@@ -6,7 +6,7 @@ def preprocess(data):
     dates=re.findall(pattern,data)
     #Creating Dataframe
     df=pd.DataFrame({'user_message':messages,'message_date':dates})
-    #covert message_date_type
+    #convert message_date_type
     df['message_date']=pd.to_datetime(df['message_date'],format='%m/%d/%y, %H:%M %p - ')
     df.rename(columns={'message_date':'date'},inplace=True)
     users=[]
